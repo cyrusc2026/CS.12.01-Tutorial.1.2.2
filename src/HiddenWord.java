@@ -14,15 +14,24 @@ public class HiddenWord {
         for (int i = 0; i < input.length(); i++){
             boolean isSame = false;
             boolean haveRepeat = false;
+            boolean haveAdded = false;
             for (int j = 0; j < hiddenWord.length(); j++){
                 if (hiddenWord.substring(j,j+1).equals(input.substring(i,i+1))) {
                     if (i==j) isSame = true;
                     else haveRepeat = true;
                 }
             }
-            if (isSame) answer.append(hiddenWord.charAt(i));
-            if (haveRepeat && !isSame) answer.append("+");
-            else if (!isSame || !haveRepeat) answer.append("*");
+            if (isSame) {
+                answer.append(hiddenWord.charAt(i));
+                haveAdded=true;
+            }
+            if (haveRepeat && !isSame) {
+                answer.append("+");
+                haveAdded=true;
+
+            }
+            else if (!haveAdded
+            ) answer.append("*");
         }
         return answer.toString();
     }
