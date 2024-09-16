@@ -1,4 +1,5 @@
 public class HiddenWord {
+    //I have neither given nor received unauthorized aid on this piece of work.
     private final String hiddenWord;
     public HiddenWord(String hiddenWord){
         this.hiddenWord = hiddenWord.toUpperCase();
